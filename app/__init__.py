@@ -1,18 +1,16 @@
 from flask import Flask
-# from config import Config, DevelopmentConfig
-# from app.models import db
+from config import Config, DevelopmentConfig
+from app.models import db
 
 
-# def create_app(config_class: Config=DevelopmentConfig):
-app = Flask(__name__)
-# app.config.from_object(DevelopmentConfig)
-with app.app_context():
-    from app import routes
+def create_app(config_class: Config=DevelopmentConfig):
+    app = Flask(__name__)
+    app.config.from_object(DevelopmentConfig)
 
-    # db.init_app(app)
+    db.init_app(app)
 
-    # with app.app_context():
-    #     from app import routes
-    #     db.create_all()
+    with app.app_context():
+        from app import models, routes
+        db.create_all()
 
-    # return app
+    return app

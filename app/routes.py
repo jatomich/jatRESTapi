@@ -1,5 +1,4 @@
-from app import app
-from flask import jsonify
+from flask import jsonify, current_app as app
 
 @app.route('/')
 @app.route('/index')
