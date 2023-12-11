@@ -1,5 +1,6 @@
-import instance from '../axios';
 import React, { Component } from 'react';
+
+import NetflixItem from './NetflixItem';
 
 class NetflixData extends Component {
   constructor(props) {
