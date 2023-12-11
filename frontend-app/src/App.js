@@ -1,13 +1,12 @@
+import React from 'react';
+import NetflixContent from './components/NetflixContent';
 import './App.css';
-import NetflixData from './components/NetflixData';
 
 function App() {
-    
   return (
     <div className="App">
-      <header className="App-header">
-        <NetflixData  />
-      </header>
+      <h1>Netflix Content</h1>
+      <NetflixContent />
     </div>
   );
 }
